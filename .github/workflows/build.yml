@@ -15,11 +15,3 @@ jobs:
         run: docker build -t docker.pkg.github.com/$GITHUB_REPOSITORY .
       - name: push images
         run: docker push docker.pkg.github.com/$GITHUB_REPOSITORY
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: ryanaltair/actions/test
-          tag_with_ref: true
