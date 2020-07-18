@@ -7,6 +7,8 @@ jobs:
     name: build docker images
     runs-on: ubuntu-18.04
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
       - name: list files
         run: ls -lht
       - name: Push to GitHub Packages
